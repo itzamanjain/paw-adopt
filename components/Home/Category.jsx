@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { db } from '../../config/firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore';
 
-const Category = () => {
+const Category = ({category}) => {
     const [categoryList, setCategoryList] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('cat');
 
@@ -32,7 +32,9 @@ const Category = () => {
                 renderItem={({ item }) => (
                     <View style={{ alignItems: 'center', marginRight: 16 }}>
                         <TouchableOpacity
-                            onPress={() => setSelectedCategory(item.name)}
+                            onPress={() => {setSelectedCategory(item.name)
+                                category(item.name)
+                            }}
                             style={[
                                 {
                                     width: 60,

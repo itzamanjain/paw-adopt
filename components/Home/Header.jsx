@@ -25,7 +25,7 @@ const Header = () => {
             fontSize:24,
             fontWeight:'bold'
         }}
-        >{user.fullName}</Text>
+        >{ "Aman Jain"}</Text>
       </View>
       <View>
         <Image source={{uri:user?.imageUrl}} style={{
